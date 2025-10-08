@@ -22,6 +22,12 @@ namespace TypeWebSocket
             _services[typeof(TInterface)] = new TImplementation();
         }
 
+        public static void RegisterService<TInterface>(TInterface implementation)
+            where TInterface : class
+        {
+            _services[typeof(TInterface)] = implementation ?? throw new ArgumentNullException(nameof(implementation));
+        }
+
         // 自动注册服务（通过反射扫描）
         public static void RegisterServicesFromAssembly(Assembly assembly)
         {
