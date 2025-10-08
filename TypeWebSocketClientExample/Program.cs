@@ -1,7 +1,9 @@
-﻿using System.Net.WebSockets;
+﻿using PublicInterface.Server;
+using System.Net.WebSockets;
 using System.Reflection;
 using System.Text;
 using TypeWebSocket;
+using TypeWebSocketClientExample;
 
 using var clientWebSocket = new ClientWebSocket();
 
@@ -36,6 +38,8 @@ if (clientWebSocket.State == WebSocketState.Open)
         }
     });
 
+    //通知服务端速度变化
+    await clientWebSocket.SendTextAsync<IRobotChange>(robot => robot.OnSpeedChanged(4));
 }
 else
 {

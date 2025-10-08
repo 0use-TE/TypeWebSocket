@@ -21,7 +21,14 @@ namespace EmbedIOExample
 
         protected override async Task OnMessageReceivedAsync(IWebSocketContext context, byte[] buffer, IWebSocketReceiveResult result)
         {
-            await RpcDispatcher.DispatchAsync(buffer);
+            try
+            {
+                await RpcDispatcher.DispatchAsync(buffer);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
         protected override Task OnClientConnectedAsync(IWebSocketContext context)
         {
