@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="EmbedIOExample/EmbedIOExample.csproj" />
+  <Project Path="PublicInterface/PublicInterface.csproj" Id="cdaf9bb4-2a9a-4a5c-9ef6-da1f6c66601b" />
+  <Project Path="TypeWebSocket.ClientWebSocket/TypeWebSocket.ClientWebSocket.csproj" Id="4ed53ba7-6482-43b5-9014-4835a87f6408" />
+  <Project Path="TypeWebSocket/TypeWebSocket.csproj" Id="44e40cf9-6f91-4f27-952f-55f36646f49a" />
+  <Project Path="TypeWebSocketClientExample/TypeWebSocketClientExample.csproj" />
+</Solution>
